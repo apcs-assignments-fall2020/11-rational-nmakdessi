@@ -71,14 +71,22 @@ public class Rational
     
     public static Rational multiply(Rational r, Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newN = r.numerator*s.numerator;
+        int newD = r.denominator*s.denominator;
+
+        Rational x = new Rational(newN, newD);
+        x = simplify(x);
+        return x;
     }
     
     public static Rational divide(Rational r, Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newN = r.numerator*s.denominator;
+        int newD = r.denominator*s.numerator;
+
+        Rational x = new Rational(newN, newD);
+        x = simplify(x);
+        return x;
     }
 
 
