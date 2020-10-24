@@ -20,12 +20,14 @@ public class Rational
     
     // This method takes two Rationals, add thems up, 
     // and returns a Rational equal to the sum
+
     public static Rational add(Rational r, Rational s)
     {
         int newNumerator = r.numerator*s.denominator + s.numerator*r.denominator;
         int newDenominator = r.denominator*s.denominator; 
         
         Rational x = new Rational(newNumerator, newDenominator);
+        x = simplify(x);
         return x;
     }
 
@@ -99,29 +101,47 @@ public class Rational
         return this.numerator + "/" + this.denominator;
     }
 
+    //r.add(nathan); 
 
     public Rational add(Rational s)
     {
         // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newNumerator = this.numerator*s.denominator + s.numerator*this.denominator;
+        int newDenominator = this.denominator*s.denominator; 
+        
+        Rational x = new Rational(newNumerator, newDenominator);
+        x = Rational.simplify(x); 
+        return x;
     }
     
     public Rational subtract(Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newN = this.numerator*s.denominator - s.numerator*this.denominator;
+        int newD = this.denominator*s.denominator; 
+        
+        Rational x = new Rational(newN, newD);
+        x = simplify(x);
+        return x;
     }
     
     public Rational multiply(Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newN = this.numerator*s.numerator;
+        int newD = this.denominator*s.denominator;
+
+        Rational x = new Rational(newN, newD);
+        x = simplify(x);
+        return x;
     }
     
     public Rational divide(Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newN = this.numerator*s.denominator;
+        int newD = this.denominator*s.numerator;
+
+        Rational x = new Rational(newN, newD);
+        x = simplify(x);
+        return x;
     }
 }
 
